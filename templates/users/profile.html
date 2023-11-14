@@ -1,0 +1,5 @@
+from django.shortcuts import render
+
+def profile(request):
+    # Your logic to get the user's information
+    return render(request, 'users/profile.html', {'user': request.user})

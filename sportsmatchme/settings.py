@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'users',
+    'events',
+    'courts',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #'DIRS': [BASE_DIR / 'templates']
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
-    ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,8 +81,12 @@ WSGI_APPLICATION = 'sportsmatchme.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'database',  #  database name.
+        'USER': 'username',  #  database user.
+        'PASSWORD': '1234',  #  database password.
+        'HOST': 'localhost',  #  database host.
+        'PORT': '5432',  #  database port.
     }
 }
 
@@ -121,9 +128,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
