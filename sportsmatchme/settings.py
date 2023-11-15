@@ -143,3 +143,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+# SECURE_SSL_REDIRECT = True # for future Enabling HTTPS
