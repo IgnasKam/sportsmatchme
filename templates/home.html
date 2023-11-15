@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,28 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportsMatchMe</title>
-    <!-- Add link to your CSS file -->
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Your custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'courts:index' %}">Courts</a></li>
-                <li><a href="{% url 'events:index' %}">Events</a></li>
-                <li><a href="{% url 'users:index' %}">Users</a></li>
-            </ul>
+        <!-- Bootstrap Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">SportsMatchMe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'courts:main_court_view' %}">Courts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'events:main_event_view' %}">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'users:user_profile_view' %}">User Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main class="container mt-4">
         {% block content %}
         <!-- The content block will be overridden by child templates -->
         {% endblock content %}
     </main>
 
-    <footer>
-        <p>© 2023 SportsMatchMe. All rights reserved.</p>
+    <footer class="bg-light py-3 mt-4">
+        <div class="container">
+            <p class="text-center mb-0">© 2023 SportsMatchMe. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

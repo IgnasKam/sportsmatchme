@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Django default" uuid="7ba0dc41-2533-4009-9000-c61355399975">
+    <data-source source="LOCAL" name="database@localhost" uuid="16cd160f-3dcc-42b3-8d95-3c87026db5cc">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/sportsmatchme/settings.py</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/database</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
