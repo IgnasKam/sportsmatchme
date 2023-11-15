@@ -6,7 +6,7 @@ from django.conf import settings
 
 class Court(models.Model):
     name = models.CharField(max_length=100, null=False, blank=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='owned_courts')
+    owner = models.ForeignKey('users.CustomUser', on_delete=models.SET_NULL, null=True, related_name='owned_courts')
     address = models.CharField(max_length=255, null=False, blank=True)
     open_hours = models.TextField(max_length=255, null=False, blank=True)
     website = models.CharField(max_length=255, null=True, blank=True)
